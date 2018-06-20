@@ -42,7 +42,7 @@ if has_feature(account, feature_mysql):
 
     steps = [
         python(
-            home + "/" + content_dir_name + "/" + url + "/Tools/" + wipe_script,
+            home + "/" + content_dir_name + "/" + url + "Setup/Tools/" + wipe_script,
             home + "/" + content_dir_name + "/" + url + "/SQL/init.sql.matrix",
             home + "/" + content_dir_name + "/" + url + "/SQL/init.sql",
             config_matrix_sql_init_main_url, main_url,
@@ -52,7 +52,7 @@ if has_feature(account, feature_mysql):
         ),
         sql_insert,
         python(
-            home + "/" + content_dir_name + "/" + url + "/Tools/" + wipe_script,
+            home + "/" + content_dir_name + "/" + url + "Setup/Tools/" + wipe_script,
             home + "/" + content_dir_name + "/" + url + "/Matrices/wp-config.php.matrix",
             home + "/" + content_dir_name + "/" + url + "/Content/wp-config.php",
             config_matrix_db_host, mysql_host_full,
