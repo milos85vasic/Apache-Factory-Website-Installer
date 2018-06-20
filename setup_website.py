@@ -50,7 +50,8 @@ if has_feature(account, feature_mysql):
             home + "/" + content_dir_name + "/" + url + "/SQL/init.sql",
             config_matrix_sql_init_main_url, main_url,
             config_matrix_sql_init_content_root, user_home() + "/" + content_dir_name,
-            config_matrix_sql_init_content_dir, url
+            config_matrix_sql_init_content_dir, url,
+            config_matrix_db, db_name,
         ),
         sql_insert,
         python(
