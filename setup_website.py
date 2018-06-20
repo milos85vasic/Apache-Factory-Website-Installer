@@ -8,12 +8,9 @@ from os.path import expanduser
 
 url = sys.argv[2]
 account = sys.argv[1]
-db_name = account + "_default"
 home = expanduser("~")
 mysql_port = default_port_mysql
-
-if sys.argv.__len__() >= 4:
-    db_name = sys.argv[3]
+db_name = account.replace(".", "_") + "_" + url.replace(".", "_")
 
 system_configuration = get_system_configuration()
 
