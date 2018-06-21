@@ -56,7 +56,7 @@ if has_feature(account, feature_mysql):
             home + "/" + content_dir_name + "/" + url + "/Setup/Tools/" + wipe_script,
             home + "/" + content_dir_name + "/" + url + "/Matrices/wp-config.php.matrix",
             home + "/" + content_dir_name + "/" + url + "/Content/wp-config.php",
-            config_matrix_sql_init_table_prefix, account.replace(".", "_"),
+            config_matrix_sql_init_table_prefix, account.replace(".", "_") + "_",
             config_matrix_db_host, mysql_host_full,
             config_matrix_db_password, mysql_password,
             config_matrix_db_user, "root",
