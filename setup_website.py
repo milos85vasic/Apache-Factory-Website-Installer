@@ -69,6 +69,24 @@ if has_feature(account, feature_mysql):
             config_matrix_secure_auth_salt, get_random_string(),
             config_matrix_logged_in_salt, get_random_string(),
             config_matrix_nonce_salt, get_random_string()
+        ),
+        python(
+            home + "/" + content_dir_name + "/" + url + "/Setup/Tools/" + wipe_script,
+            home + "/" + content_dir_name + "/" + url + "/Matrices/configuration.php.matrix",
+            home + "/" + content_dir_name + "/" + url + "/Content/configuration.php",
+            config_matrix_sql_init_table_prefix, account.replace(".", "_") + "_",
+            config_matrix_db_host, mysql_host_full,
+            config_matrix_db_password, mysql_password,
+            config_matrix_db_user, "root",
+            config_matrix_db, db_name,
+            config_matrix_auth_key, get_random_string(),
+            config_matrix_secure_auth_key, get_random_string(),
+            config_matrix_logged_in_key, get_random_string(),
+            config_matrix_nonce_key, get_random_string(),
+            config_matrix_auth_salt, get_random_string(),
+            config_matrix_secure_auth_salt, get_random_string(),
+            config_matrix_logged_in_salt, get_random_string(),
+            config_matrix_nonce_salt, get_random_string()
         )
     ]
 
