@@ -40,6 +40,15 @@ if has_feature(account, feature_mysql):
     if port != 80:
         main_url += ":" + str(port)
 
+    service_root = home + "/" + content_dir_name + "/" + url + "/Content/wp-config.php"
+    if account in system_configuration:
+        if key_services in system_configuration[account]:
+            if key_services in system_configuration[account][key_services]:
+                for service in system_configuration[account][key_services][key_services]:
+                    service_url = service[key_services_url]
+                    if service_url == url and key_service_root in service:
+                        service_root = service[key_service_root]
+
     steps = [
         python(
             home + "/" + content_dir_name + "/" + url + "/Setup/Tools/" + wipe_script,
@@ -55,7 +64,7 @@ if has_feature(account, feature_mysql):
         python(
             home + "/" + content_dir_name + "/" + url + "/Setup/Tools/" + wipe_script,
             home + "/" + content_dir_name + "/" + url + "/Matrices/wp-config.php.matrix",
-            home + "/" + content_dir_name + "/" + url + "/Content/wp-config.php",
+            service_root,
             config_matrix_sql_init_table_prefix, account.replace(".", "_") + "_",
             config_matrix_db_host, mysql_host_full,
             config_matrix_db_password, mysql_password,
