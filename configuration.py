@@ -29,3 +29,8 @@ config_matrix_sql_init_content_dir = "CONFIG_MATRIX_SQL_INIT_CONTENT_DIR"
 def get_random_string():
     alphabet = string.ascii_letters + string.digits
     return ''.join(random.choice(alphabet) for i in range(conf_salt_length))
+
+
+def get_db_name(account_name, website_url):
+    return account_name.replace(".", "_") + "_" + website_url.replace(".", "_")
+

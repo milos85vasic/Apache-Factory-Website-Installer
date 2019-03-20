@@ -10,7 +10,7 @@ url = sys.argv[2]
 account = sys.argv[1]
 home = expanduser("~")
 mysql_port = default_port_mysql
-db_name = account.replace(".", "_") + "_" + url.replace(".", "_")
+db_name = get_db_name(account, url)
 
 system_configuration = get_system_configuration()
 
