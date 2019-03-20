@@ -47,7 +47,7 @@ if has_feature(account, feature_mysql):
                 for service in system_configuration[account][key_services][key_services]:
                     service_url = service[key_services_url]
                     if service_url == url and key_service_root in service:
-                        service_root = service[key_service_root]
+                        service_root = service[key_service_root] + "/wp-config.php"
 
     steps = [
         python(
